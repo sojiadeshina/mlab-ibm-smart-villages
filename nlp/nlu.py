@@ -10,7 +10,7 @@ natural_language_understanding = NaturalLanguageUnderstandingV1(
 
 response = natural_language_understanding.analyze(
     text='Bruce Banner is the Hulk and Bruce Wayne is BATMAN! '
-         'Superman fears not Banner, but Wayne.'),
-    # features=[features.Entities(), features.Keywords(), features.Concepts()])
+         'Superman fears not Banner, but Wayne.',
+    features=[features.Entities(), features.Keywords(), features.Concepts()])
 
 print(json.dumps(response, indent=2))
