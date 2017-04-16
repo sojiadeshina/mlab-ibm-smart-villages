@@ -16,6 +16,7 @@ household_data <- household_data[,colSums(is.na(household_data))<nrow(household_
 childrens_data <- childrens_data[,colSums(is.na(childrens_data))<nrow(childrens_data)]
 household_member_data <- household_member_data[,colSums(is.na(household_member_data))<nrow(household_member_data)]
 
+
 ## write csv for python
 write.csv(births_data, paste(path_to_file, "births.csv", sep=""))
 write.csv(couples_data, paste(path_to_file, "couples.csv", sep=""))
