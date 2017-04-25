@@ -13,7 +13,7 @@ def get_node(response):
 	return response['output']['nodes_visited'][0]
 
 def get_response():
-	user_input = input(">>>")
+	user_input = raw_input(">>>")
 	return conversation.message(workspace_id=workspace_id, message_input={'text':user_input})
 
 def get_root():
@@ -55,7 +55,7 @@ def main():
 		response = get_root()
 		print_text(response)
 		response = get_response()
-		print(json.dumps(response,indent=2))
+		# print(json.dumps(response,indent=2))
 		if get_node(response) == 'HEALTH':
 			response=physical_health(response)
 		elif get_node(response) == 'DOMESTIC':
@@ -87,7 +87,7 @@ def physical_health(response):
 		print("Choose from", list(parts.keys()))
 		part = ""
 		while (part not in parts.keys()):
-			part = input(">>>")
+			part = raw_input(">>>")
 		print("I get that your", part, "is uncomfortable")
 		print("Here's a link: ", parts[part])
 	return get_root()
